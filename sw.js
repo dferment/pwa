@@ -3,13 +3,13 @@ this.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/~didier/pwa1/',
-        '/~didier/pwa1/index.html',
-        '/~didier/pwa1/app.js',
-        '/~didier/pwa1/img/titre_text.png',
-        '/~didier/pwa1/img/lingots.png',
-        '/~didier/pwa1/img/gagnant.png',
-        '/~didier/pwa1/img/defaut.png',
+        '/pwa/',
+        '/pwa/index.html',
+        '/pwa/app.js',
+        '/pwa/img/titre_text.png',
+        '/pwa/img/lingots.png',
+        '/pwa/img/gagnant.png',
+        '/pwa/img/defaut.png',
       ]);
     })
   );
@@ -29,7 +29,7 @@ this.addEventListener('fetch', function(event) {
     return response.clone();
   }).catch(function() {
       console.log('erreur loading');
-        return caches.match('/~didier/pwa1/img/defaut.png');
+        return caches.match('/pwa/img/defaut.png');
   }));
 });
 
